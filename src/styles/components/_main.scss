@@ -1,0 +1,10 @@
+@use '../utilities/variables' as *;
+
+main {
+    padding: em(20);    
+
+    section:not(:first-child) {
+        margin-top: em(30);
+    }
+    
+}

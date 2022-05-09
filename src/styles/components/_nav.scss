@@ -1,0 +1,99 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+nav{
+    position: relative;
+}
+.nav-bar{
+    display: none;
+}
+.btn-menu{
+    font-family: $heading-font;
+    font-weight: $heading-font-weight;
+    font-size: em(20);
+    @include flex-layout-row;
+    align-items: center;
+
+}
+.nav-items{
+    position:absolute;
+    right:0;
+    top:35px;
+    background-color: #fff;   
+    display: none;
+    
+    .show & {
+        @include grid(2,1fr);
+    }
+   
+    ul {
+        @include flatten(true);
+        border: $border;
+
+    }
+    li{
+        border-bottom: 1px dotted grey;
+        @at-root nav li:last-child a {
+            border-bottom: none;
+        }
+    }
+
+    a {
+        display: block;
+        line-height: 50px;        
+        color: $text-color-dark;
+        line-height: 40px;
+        text-align: left;
+        font-size: 1.2em;
+        text-decoration: none;
+        outline: none;
+        width: em(108);
+        padding-left: em(4);
+        
+        #{$lps} {
+            background-color: rgba(rgb(194, 141, 141), 0.3);
+        }
+    }
+}
+nav ul:first-child{
+    border-right: none;
+}
+@include mq($tabletPortrait){      
+    nav{
+        @include flex-layout-row;
+        margin:0;
+        padding:0;
+        .nav-bar{
+            display: flex;
+            margin:0;
+            li {
+                flex: 1;
+                @include flatten(true);
+                } 
+                a{
+                    line-height: 35px;
+                    text-align: center;
+                    font-size: 1.2em;
+                    display: block;
+                    padding-left: em(10);
+                    @at-root nav li:last-child a {
+                        margin-right: em(10);
+                    }
+                }
+           }
+
+    }  
+    .nav-items{
+        display: block;
+        .primary{
+            display: none;
+        }
+        .secondary{
+            display: none;
+            .showSecondary & {
+                display: block;               
+                
+            }      
+        } 
+        
+    }
+}

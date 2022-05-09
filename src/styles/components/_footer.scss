@@ -1,0 +1,16 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+footer {
+    text-align: center;
+    background-color: white;
+    color: rgb(75, 72, 72);
+    padding: em(30);
+    margin-top: 2rem;
+    p {
+      margin-bottom: 0;
+      font-size: 1rem;
+      @include flatten;
+
+    }
+  }

@@ -1,0 +1,40 @@
+@use "sass:math";
+
+// Colors
+$brand-color: red;
+$body-bg-color: white;
+$wrapper-bg-color: white;
+$footer-bg-color:rgb(161, 95, 161);
+$blue:#72d3d6;
+// Text Colors
+$text-color-dark: black;
+$text-color-light: white;
+
+// Use Color functions to brighten and darken colors
+$brand-color-dark: darken($brand-color, 20);
+$brand-color-light: lighten($brand-color, 20);
+
+// Fonts
+$body-font: 'EB Garamond', serif;
+$heading-font: 'Dancing Script', cursive;
+$nav-font: 'Open Sans', sans-serif;;
+$border: 2px solid grey;
+// Typographic Defualts
+$line-height: 1.4;
+$heading-font-weight: 600;
+
+// Function to
+// Convert Px to Ems
+@function em($px, $bc: 16){
+    @return #{math.div($px, $bc)}em;
+}
+
+// Media Query Breakpoints
+$desktopMedium: em(1251);
+$tabletLandscape: em(900);
+$tabletPortrait: em(850);
+$phoneLandscape: em(670);
+$phonePortrait: em(420);
+
+// Utility variables
+$lps: '&:hover, &:focus, &:active';

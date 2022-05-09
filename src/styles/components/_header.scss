@@ -1,0 +1,45 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+header {
+    background-color: white;
+    padding: em(15) em(20);
+    // height: 69px;
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    // max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: em(16);
+    position: relative;
+    h1 {
+        @include flatten;
+        color: black;
+        font-size: em(26);
+        svg{
+            font-size: em(24);
+        }
+        @include mq($phoneLandscape){
+            font-size: em(32);
+        }
+    }
+    div{
+        display: flex;
+        justify-content:space-evenly;
+        flex-wrap: wrap;
+        align-items: center;
+        svg{
+            font-size: em(28);
+            margin-right: 20px;
+            
+        }
+        .sign-out{
+                background-color: $body-bg-color;
+                height: 28px;
+                margin: 0;
+                border: none;
+                font-size: em(20);
+            }
+    }
+}
